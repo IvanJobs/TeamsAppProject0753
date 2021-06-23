@@ -26,5 +26,7 @@ jobs:
     steps:
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo ${TEST_USER_NAME}
+        run: | 
+            echo ${TEST_USER_NAME}
+            echo ${secrets.TEST_USER_NAME}
 
