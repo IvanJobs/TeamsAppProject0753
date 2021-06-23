@@ -31,4 +31,22 @@ jobs:
       - name: Install Teams Toolkit CLI
         run: npm install -g @microsoft/teamsfx-cli@stable
         
-      
+      - name: Build The Project  
+        run: |
+            cd tabs
+            npm run build
+
+      - name: Test The Project
+        run: echo "do nothing"
+
+      - name: Provision in Azure
+        run: teamsfx provision --verbose
+
+      - name: Validate Teams App Manifest
+        run: teamsfx validate --verbose
+
+      - name: Deploy in Azure
+        run: teamsfx deploy
+
+      - name: Pack Teams App Package
+        run: teamsfx build
