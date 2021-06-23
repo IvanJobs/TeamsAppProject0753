@@ -46,7 +46,7 @@ jobs:
       - name: Provision in Azure
         run: |
             echo ${TEST_USER_NAME}
-            teamsfx provision --verbose
+            teamsfx provision --subscription ${TEST_SUBSCRIPTION_ID} --verbose
 
       - name: Validate Teams App Manifest
         run: teamsfx validate --verbose
