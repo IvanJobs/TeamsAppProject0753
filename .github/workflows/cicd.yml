@@ -34,13 +34,16 @@ jobs:
       - name: Build The Project  
         run: |
             cd tabs
+            npm install
             npm run build
 
       - name: Test The Project
         run: echo "do nothing"
 
       - name: Provision in Azure
-        run: teamsfx provision --verbose
+        run: |
+            echo ${TEST_USER_NAME}
+            teamsfx provision --verbose
 
       - name: Validate Teams App Manifest
         run: teamsfx validate --verbose
