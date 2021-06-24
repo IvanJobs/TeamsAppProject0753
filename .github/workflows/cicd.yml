@@ -56,6 +56,3 @@ jobs:
 
       - name: Pack Teams App
         run: teamsfx build
-
-      - name: Publish Teams App
-        run: teamsfx publish
