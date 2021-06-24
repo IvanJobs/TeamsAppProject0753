@@ -54,5 +54,8 @@ jobs:
       - name: Deploy in Azure
         run: teamsfx deploy
 
-      - name: Pack Teams App Package
+      - name: Pack Teams App
         run: teamsfx build
+
+      - name: Publish Teams App
+        run: teamsfx publish
