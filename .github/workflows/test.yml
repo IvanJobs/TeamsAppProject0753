@@ -17,5 +17,5 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: IvanJobs/AllInOneSample@v0.1
+      - uses: IvanJobs/AllInOneSample/.github/actions/hello-world@v0.1.0
 
