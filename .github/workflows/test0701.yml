@@ -33,7 +33,7 @@ jobs:
       - uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v2
         with:
           operation-type: 'Build Teams App'
-          project-root: ${GITHUB_WORKSPACE} 
+          project-root: ${{github.workspace}} 
 
       - name: Test The Project
         run: echo "do nothing"
