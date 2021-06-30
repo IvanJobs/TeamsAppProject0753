@@ -38,10 +38,10 @@ jobs:
       - name: Test The Project
         run: echo "do nothing"
 
-      - name: Provision in Azure
-        run: |
-            echo ${TEST_USER_NAME}
-            teamsfx provision --subscription ${TEST_SUBSCRIPTION_ID} --verbose
+      - uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v2
+        with:
+          operation-type: 'Provision Hosting Environment'
+          project-root: ${{github.workspace}}
 
       - name: Validate Teams App Manifest
         run: teamsfx validate --verbose
