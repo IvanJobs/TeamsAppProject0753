@@ -26,30 +26,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - uses: actions/setup-node@v2.1.5
+      - uses: IvanJobs/AllInOneSample@v3
         with:
-          node-version: '14'
-      - name: test
-        run: npm install -g @microsoft/teamsfx-cli
-
-      #- uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v3
-      #  with:
-      #    operation-type: 'Build Teams App'
-      #    project-root: ${{github.workspace}}
+          operation-type: 'Build Teams App'
+          project-root: ${{github.workspace}}
 
       - name: Test The Project
         run: echo "do nothing"
 
-      - uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v3
+      - uses: IvanJobs/AllInOneSample@v3
         with:
           operation-type: 'Provision Hosting Environment'
           project-root: ${{github.workspace}}
-
-      - name: Validate Teams App Manifest
-        run: teamsfx validate --verbose
-
-      - name: Deploy in Azure
-        run: teamsfx deploy
-
-      - name: Pack Teams App
-        run: teamsfx build
