@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: '14'
 
-      - uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v2
+      - uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v3
         with:
           operation-type: 'Build Teams App'
           project-root: ${{github.workspace}} 
@@ -38,7 +38,7 @@ jobs:
       - name: Test The Project
         run: echo "do nothing"
 
-      - uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v2
+      - uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v3
         with:
           operation-type: 'Provision Hosting Environment'
           project-root: ${{github.workspace}}
