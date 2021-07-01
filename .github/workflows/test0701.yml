@@ -35,10 +35,10 @@ jobs:
             node -v
             npm -v
 
-      - uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v3
-        with:
-          operation-type: 'Build Teams App'
-          project-root: ${{github.workspace}}
+      #- uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v3
+      #  with:
+      #    operation-type: 'Build Teams App'
+      #    project-root: ${{github.workspace}}
 
       - name: Test The Project
         run: echo "do nothing"
