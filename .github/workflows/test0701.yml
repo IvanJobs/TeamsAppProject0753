@@ -29,11 +29,16 @@ jobs:
       - uses: actions/setup-node@v2.1.5
         with:
           node-version: '14'
+      - name: test
+        run: |
+            echo ${SHELL}
+            node -v
+            npm -v
 
       - uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v3
         with:
           operation-type: 'Build Teams App'
-          project-root: ${{github.workspace}} 
+          project-root: ${{github.workspace}}
 
       - name: Test The Project
         run: echo "do nothing"
