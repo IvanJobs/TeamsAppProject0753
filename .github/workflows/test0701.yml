@@ -26,10 +26,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-        #- uses: IvanJobs/AllInOneSample@v3
-        #with:
-        #  operation-type: 'Build Teams App'
-        #  project-root: ${{github.workspace}}
+      - uses: IvanJobs/AllInOneSample@v3
+        with:
+          operation-type: 'Build Teams App'
+          project-root: ${{github.workspace}}
 
       - name: Test The Project
         run: echo "do nothing"
@@ -49,7 +49,7 @@ jobs:
           operation-type: 'Validate Teams App Manifest'
           project-root: ${{github.workspace}}
 
-      - uses: IvanJobs/AllInOneSample@v3
-        with:
-          operation-type: 'Publish Teams App'
-          project-root: ${{github.workspace}}
+      #- uses: IvanJobs/AllInOneSample@v3
+      #  with:
+      #    operation-type: 'Publish Teams App'
+      #    project-root: ${{github.workspace}}
