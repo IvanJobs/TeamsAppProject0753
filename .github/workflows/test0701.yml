@@ -38,3 +38,18 @@ jobs:
         with:
           operation-type: 'Provision Hosting Environment'
           project-root: ${{github.workspace}}
+
+      - uses: IvanJobs/AllInOneSample@v3
+        with:
+          operation-type: 'Deploy to Hosting Environment'
+          project-root: ${{github.workspace}}
+
+      - uses: IvanJobs/AllInOneSample@v3
+        with:
+          operation-type: 'Validate Teams App Manifest'
+          project-root: ${{github.workspace}}
+
+      - uses: IvanJobs/AllInOneSample@v3
+        with:
+          operation-type: 'Publish Teams App'
+          project-root: ${{github.workspace}}
