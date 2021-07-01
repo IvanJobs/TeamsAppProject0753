@@ -30,12 +30,7 @@ jobs:
         with:
           node-version: '14'
       - name: test
-        run: |
-            echo ${SHELL}
-            node -v
-            npm -v
-            which node
-            env
+        run: npm install -g @microsoft/teamsfx-cli
 
       #- uses: IvanJobs/AllInOneSample/teams-toolkit-cicd@v3
       #  with:
