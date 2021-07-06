@@ -13,7 +13,12 @@ jobs:
   # This workflow contains a single job called "allinone"
   allinone:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        node-version: [12]
+
+    runs-on: ${{ matrix.os }}
     env:
       TEST_USER_NAME: ${{ secrets.TEST_USER_NAME }}
       TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
@@ -26,9 +31,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
-        with:
-          operation-type: 'Build Teams App'
+        #- uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
+        #with:
+        #  operation-type: 'Build Teams App'
 
       - name: Test The Project
         run: echo "do nothing"
@@ -36,6 +41,8 @@ jobs:
       - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
         with:
           operation-type: 'Provision Hosting Environment'
+      - name: Echo Output for Provision
+        run: env 
 
       - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
         with:
