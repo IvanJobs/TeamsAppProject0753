@@ -42,7 +42,7 @@ jobs:
         with:
           operation-type: 'Provision Hosting Environment'
       - name: Echo Output for Provision
-        run: env 
+        run: echo ${{outputs.config-file-path}} 
 
       - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
         with:
