@@ -31,22 +31,22 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/cicd_test 
+      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
         with:
           operation-type: 'Build Teams App'
 
       - name: Test The Project
         run: echo "do nothing"
 
-      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/cicd_test 
+      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
         with:
           operation-type: 'Provision Hosting Environment'
 
-      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/cicd_test 
+      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
         with:
           operation-type: 'Deploy to Hosting Environment'
 
-      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/cicd_test 
+      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
         with:
           operation-type: 'Validate Teams App Manifest'
 
