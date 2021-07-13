@@ -36,7 +36,7 @@ jobs:
           operation-type: 'Build Teams App'
 
       - name: Test The Project
-        run: echo "do nothing"
+        run: env 
 
       - uses: OfficeDev/TeamsFx/packages/github-actions/teams-app-cicd@ruhe/action_toolkit_cicd 
         with:
