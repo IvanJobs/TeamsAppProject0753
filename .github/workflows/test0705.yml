@@ -24,29 +24,28 @@ jobs:
       TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
       TEST_SUBSCRIPTION_ID: ${{ secrets.TEST_SUBSCRIPTION_ID }}
       TEST_TENANT_ID: ${{ secrets.TEST_TENANT_ID }}
-      CI_ENABLED: "true"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
+      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-app-cicd@ruhe/action_toolkit_cicd 
         with:
           operation-type: 'Build Teams App'
 
       - name: Test The Project
         run: echo "do nothing"
 
-      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
+      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-app-cicd@ruhe/action_toolkit_cicd 
         with:
           operation-type: 'Provision Hosting Environment'
 
-      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
+      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-app-cicd@ruhe/action_toolkit_cicd 
         with:
           operation-type: 'Deploy to Hosting Environment'
 
-      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-toolkit-cicd@ruhe/action_toolkit_cicd 
+      - uses: OfficeDev/TeamsFx/packages/github-actions/teams-app-cicd@ruhe/action_toolkit_cicd 
         with:
           operation-type: 'Validate Teams App Manifest'
 
