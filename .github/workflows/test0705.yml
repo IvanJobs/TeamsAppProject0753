@@ -33,7 +33,7 @@ jobs:
       
       - uses: OfficeDev/TeamsFx/packages/github-actions/teams-app-cicd@ruhe/action_toolkit_cicd 
         with:
-          operation-type: 'BuildTeams App'
+          operation-type: 'Build Teams App'
 
       - name: Test The Project
         run: env 
