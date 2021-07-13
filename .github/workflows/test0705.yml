@@ -24,7 +24,6 @@ jobs:
       TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
       TEST_SUBSCRIPTION_ID: ${{ secrets.TEST_SUBSCRIPTION_ID }}
       TEST_TENANT_ID: ${{ secrets.TEST_TENANT_ID }}
-      CI_ENALBED: "true"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
